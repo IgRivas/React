@@ -3,12 +3,15 @@
     align-items: center;
     color: #fff;
     font-size: .8rem;
+    width: 300px;
+
 }
 
 .tw-followCard-header{
     display: flex;
     align-items: center;
     gap: 4px;
+    width: 200px;
 
 }
 
@@ -36,6 +39,7 @@
     font-weight: bold;
     cursor: pointer;
     transition: .3s ease  background-color;
+    
 }
 
 .tw-followCard-button.is-following{

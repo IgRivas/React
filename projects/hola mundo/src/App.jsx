@@ -1,19 +1,50 @@
 import './App.css'
 import { TwitterFollowCard } from './TwiterFollowCard.jsx'
 
+//Lista de usuairos que podrian venir desde una base de datos 
+const users = [
+  {
+    userName :'midudev',
+    name : 'Miguel Angel Duran',
+    isFollowing : false
+
+  },
+  {
+    userName :'pepito',
+    name: 'Pep Guardiola',
+    isFollowing : true
+  }
+]
+
 export function App (){
-    const format =(userName)=> `@${userName}`
     return (
     <>
     <section className='App'>      
       
-      <TwitterFollowCard  formatUserName={format}  isFollowing userName="ignacio" name="Ignacio"/>
-      <TwitterFollowCard  formatUserName={format} isFollowing={false} userName="pedro" name="Pedro"/>
-      <TwitterFollowCard  formatUserName={format} isFollowing userName="carlos" name="Carlos"/>
-      <TwitterFollowCard  formatUserName={format} isFollowing={false} userName="maria" name="Maria"/>
-
+      <TwitterFollowCard    initialIsFollowing userName="ignacio" name="Ignacio"/>
+      <TwitterFollowCard   initialIsFollowing={false} userName="pedro" name="Pedro"/>
+      <TwitterFollowCard   initialIsFollowing userName="carlos" name="Carlos"/>
+      <TwitterFollowCard   initialIsFollowing={false} userName="maria" name="Maria"/>
+      
+      
+      
+      {/* Como renderizar listas? Usando JavaScript*/}
+      {
+      users.map(({userName, name, isFollowing})=>(
+        <TwitterFollowCard
+        key={userName}
+        userName={userName}
+        initialIsFollowing={isFollowing}
+        name={name}>
+        </TwitterFollowCard>
+      ))
+      }
     </section>
+   
+    
+
  
     </>
     )
 }
+    

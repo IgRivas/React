@@ -11,4 +11,8 @@ body{
     display: flex;
     flex-direction: column;
     gap: 8px;
+    border: solid 2px grey;
+    padding: 10px;
+    border-radius: 19px;
+
 }
