@@ -18,3 +18,6 @@ export   const checkWinnerFrom =(boardToCheck) =>{
     //Si todos los elementos square del tablero son distintos de null retorna true
     return newBoard.every((square) => square!= null)
   }
+
+
+  
